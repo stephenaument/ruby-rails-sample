@@ -1,0 +1,7 @@
+language: ruby
+rvm:
+  - 2.2.2
+
+after_success:
+  - if [ "$BRANCH" == "master" ]; then git remote add rails dokku@45.55.89.100:dokku.stch.io; fi
+  - if [ "$BRANCH" == "master" ]; then git push rails master; fi
